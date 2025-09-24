@@ -80,7 +80,7 @@ section {
 }
 
 .alt-bg {
-  background: #faf7f5;
+  background: #e9dfd1;
 }
 
 h2 {
@@ -140,7 +140,6 @@ footer p {
 .contact-split {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 2rem; /* space between map and info */
   align-items: stretch;
   padding: 0; /* overrides section padding so it hugs edges better */
   min-height: 400px;
@@ -151,6 +150,7 @@ footer p {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  text-align: center;
 }
 
 .contact-info p {
@@ -159,14 +159,34 @@ footer p {
 
 .contact-info h2 {
   margin-bottom: 1rem;
-  text-align: left;
+  text-align: center;
 }
 
+/* Opening Hours – standout cozy style */
 .hours {
-  margin-top: 2rem;
-  display: flex;
-  flex-direction: column;
+  margin: 4rem auto;
+  margin-bottom: 0;
+  padding: 2rem;
+  max-width: 600px;
   text-align: center;
+
+  border: 2px solid #a45c40; /* warm border like a café frame */
+  border-radius: 12px;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+}
+
+.hours h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #5c4033;
+  position: relative;
+}
+
+.hours h2::after {
+  content: "☕"; /* little coffee cup flair */
+  font-size: 1.4rem;
+  margin-left: 0.6rem;
+  color: #a45c40;
 }
 
 .hours ul {
@@ -176,7 +196,21 @@ footer p {
 }
 
 .hours li {
-  margin: 0.25rem 0;
+  margin: 0.75rem 0;
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: #3d3d3d;
+  letter-spacing: 0.3px;
+
+  background: #fff;
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  box-shadow: inset 0 -1px 0 #eee;
+  transition: background 0.3s;
+}
+
+.hours li:hover {
+  background: #faf3ed; /* subtle hover effect */
 }
 
 .map iframe {
@@ -190,9 +224,14 @@ footer p {
   .contact-split {
     grid-template-columns: 1fr;
     min-height: auto;
+    gap: 0;
   }
 
   .map {
-    min-height: 250px;
+    min-height: 350px; /* bigger map on mobile */
+  }
+
+  .map iframe {
+    height: 350px; /* force iframe to match new height */
   }
 }
