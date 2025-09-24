@@ -1,0 +1,198 @@
+/* Fonts + Reset */
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.7;
+  color: #2b2b2b;
+  background-color: #fffdfc;
+}
+
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+  color: #2f2f2f;
+  font-weight: 600;
+  margin-top: 0;
+}
+
+/* Hero Section */
+.hero {
+  background: url("bistro.jpg") center/cover no-repeat;
+  
+  height: 75vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  position: relative;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.35);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.hero h1 {
+  font-size: 5rem;
+  margin: 0;
+  color:white;
+}
+
+.hero p {
+  font-size: 1.25rem;
+  margin-top: 0.5rem;
+}
+
+/* Navbar */
+nav {
+  background: white;
+  text-align: center;
+  padding: 1rem;
+  border-bottom: 1px solid #eee;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+nav a {
+  margin: 0 1rem;
+  text-decoration: none;
+  color: #4a4a4a;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #a45c40;
+}
+
+/* Sections */
+section {
+  padding: 4rem 12%;
+}
+
+.alt-bg {
+  background: #faf7f5;
+}
+
+h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #2f2f2f;
+}
+
+/* Menu */
+.menu {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+}
+
+.menu-item {
+  text-align: center;
+}
+
+.menu-item h3 {
+  margin: 0.5rem 0;
+  font-size: 1.3rem}
+
+
+  .gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* smaller base size */
+  gap: 1rem; /* tighter spacing */
+  justify-items: center; /* center smaller images */
+}
+
+.gallery img {
+  width: 90%;           /* make images sit smaller inside grid cells */
+  max-width: 220px;     /* cap image size */
+  border-radius: 8px;
+  transition: transform 0.3s;
+}
+
+
+/* Instagram embed alignment */
+.instagram {
+  text-align: center;
+  margin-top: 2rem;
+}
+.instagram h3 {
+  margin-bottom: 1rem;
+}
+
+footer p {
+  text-align: center;
+}
+
+
+
+/* Contact Split Layout */
+.contact-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem; /* space between map and info */
+  align-items: stretch;
+  padding: 0; /* overrides section padding so it hugs edges better */
+  min-height: 400px;
+}
+
+.contact-info {
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.contact-info p {
+  margin: 0.5rem 0;
+}
+
+.contact-info h2 {
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.hours {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.hours ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.hours li {
+  margin: 0.25rem 0;
+}
+
+.map iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Mobile responsive: stack instead of splitting */
+@media (max-width: 768px) {
+  .contact-split {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .map {
+    min-height: 250px;
+  }
+}
