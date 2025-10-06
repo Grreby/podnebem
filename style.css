@@ -27,6 +27,12 @@ h1, h2, h3 {
   position: relative;
 }
 
+#ikony{
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
 .hero::after {
   content: "";
   position: absolute;
