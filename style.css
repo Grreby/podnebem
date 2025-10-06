@@ -135,7 +135,9 @@ footer p {
   text-align: center;
 }
 
-
+#footer-link {
+  color: inherit;
+}
 
 /* Contact Split Layout */
 .contact-split {
